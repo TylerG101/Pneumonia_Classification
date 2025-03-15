@@ -2,37 +2,32 @@
 
 
 ## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+This model has been trained to differentiate between chest x-ray images from patients with and without pneumonia and has consistently scored an ~88% accuracy in training
 
 ## Data
 Chest x-ray images comes from https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia 
 
 
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## Installation and usage 
+To test this model out yourself, start by simply cloning the repository and doing a 
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+`pip install -r requirements.txt`
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+From there, you can train and save a model by running 
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+`python train_script.py`
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+You can also use this model you've just trained to make a prediciton on one of the images in the predict folder by running
 
-## License
-For open source projects, say how it is licensed.
+ `python prediciton.py` 
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+ (this defaults to a non-pneumonia image, but can be changed by providing a flag for a different image, like so: 
+
+ `python prediciton.py --image ../Data/chest_xray/predict/PNEUMONIA/person1946_bacteria_4874.jpeg`  )
+
+
+
+
+
+
